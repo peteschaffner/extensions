@@ -12,7 +12,7 @@ import {
 import { NotificationResult } from "./api/getNotifications";
 import { updateNotification } from "./api/updateNotification";
 import View from "./components/View";
-import { getNotificationMenuBarIcon, getNotificationMenuBarTitle, getNotificationTitle } from "./helpers/notifications";
+import { getNotificationMenuBarTitle, getNotificationTitle } from "./helpers/notifications";
 import { getUserIcon } from "./helpers/users";
 import useNotifications from "./hooks/useNotifications";
 
@@ -61,7 +61,7 @@ function UnreadNotifications() {
   return (
     <MenuBarExtra
       title={getNotificationMenuBarTitle(unreadNotifications)}
-      icon={getNotificationMenuBarIcon(unreadNotifications)}
+      icon={{ source: { light: "light/linear.svg", dark: "dark/linear.svg" } }}
       isLoading={isLoadingNotifications}
     >
       <MenuBarExtra.Section>
